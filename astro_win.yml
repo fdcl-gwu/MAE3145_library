@@ -1,4 +1,4 @@
-name: astro_win
+name: astro
 channels:
 - defaults
 dependencies:
@@ -52,5 +52,5 @@ dependencies:
   - requests==2.18.4
   - spacetrack==0.13.0
   - urllib3==1.22
-prefix: C:\Users\skulumani\AppData\Local\conda\conda\envs\astro_win
+prefix: C:\Users\crandallk\AppData\Local\conda\conda\envs\astro_win
 

@@ -71,10 +71,10 @@ To recreate it on your own system simply open a terminal and run
 
 3. Next, you should make sure the library is working properly by testing. 
 
-* Navigate to the correct directory - `cd path/to/MAE3145_library`
+    * Navigate to the correct directory - `cd path/to/MAE3145_library`
 
-From this directory you can run the tests using `pytest`
-A single function called `test_always_fail` should be the only failure.
+    From this directory you can run the tests using `pytest`
+    A single function called `test_always_fail` should be the only failure.
 
 4. Congratulations, you have the astro library and can begin adding your own functions and modules
 
