@@ -14,9 +14,9 @@ First we need to ensure that the code is the same across systems.
 It is preferrable to use `git` to manage this library but if you choose not to, you can download the zip files from
 
 * [Library](https://github.com/fdcl-gwu/MAE3145_library/archive/master.zip)
-* [Kinematics](https://github.com/fdcl-gwu/kinematics/archive/00b1a485e3d6076bc98d2fa4e4ac506cd342b8b3.zip)
 
-Extract both and then place the `kinematics` zip file contents into `MAE3145_library/kinematics`. Once completed your directory should look something like this:
+Extract the zip file to a good directory and navigate into this directory - `cd path/to/MAE3145_library`.
+Inside this directory, the file structure should look similar to this:
 
 ~~~
 ├── astro
@@ -25,8 +25,6 @@ Extract both and then place the `kinematics` zip file contents into `MAE3145_lib
 │   ├── __init__.py
 │   ├── tests
 │   │   ├── __init__.py
-│   │   ├── __pycache__
-│   │   │   └── test_tle.cpython-36-PYTEST.pyc
 │   │   ├── test_constants.py
 │   │   └── test_time.py
 │   └── time.py
