@@ -8,73 +8,73 @@ First we need to ensure that the code is the same across systems.
 
 0. You should have already installed [Anaconda](https://www.anaconda.com/download/) 
 
-* Ensure you download the Python 3 version for your system
+    * Ensure you download the Python 3 version for your system
 
 1. Get this library onto your system. Github provides a clone or download link you can use. 
 It is preferrable to use `git` to manage this library but if you choose not to, you can download the zip files from
 
-* [Library](https://github.com/fdcl-gwu/MAE3145_library/archive/master.zip)
+    * [Library](https://github.com/fdcl-gwu/MAE3145_library/archive/master.zip)
 
-Extract the zip file to a good directory and navigate into this directory - `cd path/to/MAE3145_library`.
-Inside this directory, the file structure should look similar to this:
+    Extract the zip file to a good directory and navigate into this directory - `cd path/to/MAE3145_library`.
+    Inside this directory, the file structure should look similar to this:
 
-~~~
-├── astro
-│   ├── constants.py
-│   ├── example_module.py
-│   ├── __init__.py
-│   ├── tests
-│   │   ├── __init__.py
-│   │   ├── test_constants.py
-│   │   └── test_time.py
-│   └── time.py
-├── astro_env.yml
-├── data
-│   ├── RV1_solution.txt
-│   ├── RV1.txt
-│   ├── RV2COE_tle_rv.txt
-│   ├── RV2COE_tle_solution.txt
-│   └── vector.txt
-├── example_driver.py
-├── kinematics
-│   ├── attitude.py
-│   ├── __init__.py
-│   ├── LICENSE.md
-│   ├── README.md
-│   ├── setup_repo.sh
-│   ├── sphere.py
-│   ├── tags
-│   └── tests
-│       ├── __init__.py
-│       ├── test_attitude.py
-│       └── test_sphere.py
-├── LICENSE.md
-├── README.md
-├── tags
-└── tests
-    ├── __init__.py
-    └── test_example_module.py
-~~~
+    ~~~
+    ├── astro
+    │   ├── constants.py
+    │   ├── example_module.py
+    │   ├── __init__.py
+    │   ├── tests
+    │   │   ├── __init__.py
+    │   │   ├── test_constants.py
+    │   │   └── test_time.py
+    │   └── time.py
+    ├── astro_env.yml
+    ├── data
+    │   ├── RV1_solution.txt
+    │   ├── RV1.txt
+    │   ├── RV2COE_tle_rv.txt
+    │   ├── RV2COE_tle_solution.txt
+    │   └── vector.txt
+    ├── example_driver.py
+    ├── kinematics
+    │   ├── attitude.py
+    │   ├── __init__.py
+    │   ├── LICENSE.md
+    │   ├── README.md
+    │   ├── setup_repo.sh
+    │   ├── sphere.py
+    │   ├── tags
+    │   └── tests
+    │       ├── __init__.py
+    │       ├── test_attitude.py
+    │       └── test_sphere.py
+    ├── LICENSE.md
+    ├── README.md
+    ├── tags
+    └── tests
+        ├── __init__.py
+        └── test_example_module.py
+    ~~~
 
 2. [Anaconda environment](https://conda.io/docs/user-guide/tasks/manage-environments.html#) - we use a `conda` environment to ensure that the code requirements are the same across systems. 
 This directory holds an `astro_env.yml` file which holds the required packages and software to run this code.
 To recreate it on your own system simply open a terminal and run
 
-~~~
-conda env create -f astro_env.yml
-~~~
+    ~~~
+    conda env create -f astro_env.yml
+    ~~~
 
-Once complete, you should activate this environment using
+    Once complete, you should activate this environment using
 
-* Windows - `activate astro`
-* macOS/Linux - `source activate astro`
+    * Windows - `activate astro`
+    * macOS/Linux - `source activate astro`
 
-3. Next, you should make sure the library is working properly by testing. 
+    3. Next, you should make sure the library is working properly by testing. 
 
-* Navigate to the correct directory - `cd path/to/MAE3145_library`
+    * Navigate to the correct directory - `cd path/to/MAE3145_library`
 
-From this directory you can run the tests using `pytest`
-A single function called `test_always_fail` should be the only failure.
+    From this directory you can run the tests using `pytest`
+    A single function called `test_always_fail` should be the only failure.
 
 4. Congratulations, you have the astro library and can begin adding your own functions and modules
 
