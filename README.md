@@ -95,12 +95,18 @@ Without `git` you'll need to manually verify that you have the most up to date v
 
 ## Function listing
 
-- [ ] List and short description of included functions
+The astrodynamic functions are contained in the `astro` package.
+ 
+* `astro.time` - Module which contains time related transformations and operations
+* `astro.constants` - A variety of planetary constants are saved in this module. 
+For example, to get the radius of Jupiter
+
+~~~
+from astro import constants
+print(constants.jupiter.radius)
+~~~
+
+The `kinematics` package holds several attitude transformation related functions.
 
 ## Suggestions for use/structure
-
-- [ ] Use this with git, provide some links
-- [ ] Make your own module for homeworks/projects
-- [ ] Get FDCL to test it out
-- [ ] Test on the lab computers and my laptop
 
