@@ -13,7 +13,8 @@ Shankar Kulumani		GWU		skulumani@gwu.edu
 
 import numpy as np  # numpy will allow us to do the actual testing
 
-from astro import example_module  # we import the module or functions we want to test
+# we import the module or functions we want to test
+from astro import example_module
 
 
 def test_add_two_inputs_scalar():
@@ -28,15 +29,16 @@ def test_add_two_inputs_scalar():
     a = 2
     b = 3
     actual_out = example_module.add_two_inputs(a, b)
-    expected_out = 5 
+    expected_out = 5
     # this assertions tells Python that the output should match what we exepct.
     # If the test fails then we instantly know that something is wrong with our
     # code
     np.testing.assert_equal(actual_out, expected_out)
 
+
 def test_add_two_inputs_numpy_arrays():
     """This function will test two array inputs
-    
+
     We can possibly input arrays into our function so we should make sure that
     works as well.
     """
@@ -47,8 +49,9 @@ def test_add_two_inputs_numpy_arrays():
     actual_out = example_module.add_two_inputs(a, b)
     # there are many kinds of assertions built into Numpy. They allow
     # comparisions between scalars, arrays, strings, and at various tolerances
-    # for the case of floats. 
+    # for the case of floats.
     np.testing.assert_allclose(actual_out, expected_out)
+
 
 def test_add_two_inputs_large_random_arrays():
     """Our function should hopefully be able to handle any sized array
@@ -60,14 +63,8 @@ def test_add_two_inputs_large_random_arrays():
     actual_out = example_module.add_two_inputs(a, b)
     np.testing.assert_allclose(actual_out, expected_out)
 
-def test_always_fail():
-    """Here's a test that will always fail to test the tester
-
-    """
-    np.testing.assert_allclose(1, 0)
 
 def test_always_pass():
     """Here's a test that will always pass
     """
     np.testing.assert_allclose(1, 1)
-

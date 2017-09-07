@@ -57,24 +57,17 @@ It is preferrable to use `git` to manage this library but if you choose not to, 
         └── test_example_module.py
     ~~~
 
-2. [Anaconda environment](https://conda.io/docs/user-guide/tasks/manage-environments.html#) - we use a `conda` environment to ensure that the code requirements are the same across systems. 
-This directory holds an `astro_unix.yml`/`astro_win.yml` file which holds the required packages and software to run this code.
-To recreate it on your own system simply open a terminal and run
+2. Open Ipython - the Anaconda software gives you a nice ability to easily open Python. 
+Instructions will differ based on your system
 
-    * Windows - `conda env create -f astro_win.yml` 
-    * Linux/MacOS - `conda env create -f astro_unix.yml`
-
-    Once complete, you should activate this environment using
-
-    * Windows - `activate astro`
-    * macOS/Linux - `source activate astro`
+    * Windows - Go to Start and search for `Ipython`
+    * MacOS - Open the `Terminal` app and type `ipython` to start Python
 
 3. Next, you should make sure the library is working properly by testing. 
 
     * Navigate to the correct directory - `cd path/to/MAE3145_library`
 
     From this directory you can run the tests using `pytest`
-    A single function called `test_always_fail` should be the only failure.
 
 4. Congratulations, you have the astro library and can begin adding your own functions and modules
 
