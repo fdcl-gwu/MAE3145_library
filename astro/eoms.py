@@ -82,3 +82,80 @@ def gravity_force(m1, m2, r12_vector, G=constants.G):
     F12 = - (G * m1 * m2 / mag**2 ) * unit_vector
 
     return F12
+
+
+def eomTBI(state, t, m1, m2, G):
+    r"""This simulates the motion of two bodies under their mutual
+        gravity.
+
+    Extended description of the function.
+
+    Parameters
+    ----------
+    var1 : array_like and type
+        <`4:Description of the variable`>
+
+    Returns
+    -------
+    describe : type
+        Explanation of return value named describe
+
+    Other Parameters
+    ----------------
+    only_seldom_used_keywords : type
+        Explanation of this parameter
+
+    Raises
+    ------
+    BadException
+        Because you shouldn't have done that.
+
+    See Also
+    --------
+    other_func: Other function that this one might call
+
+    Notes
+    -----
+    You may include some math:
+
+    .. math:: X(e^{j\omega } ) = x(n)e^{ - j\omega n}
+
+    Author
+    ------
+    Shankar Kulumani		GWU		skulumani@gwu.edu
+
+    References
+    ----------
+    Cite the relevant literature, e.g. [1]_.  You may also cite these
+    references in the notes section above.
+
+    .. [1] Shannon, Claude E. "Communication theory of secrecy systems."
+    Bell Labs Technical Journal 28.4 (1949): 656-715
+
+    Examples
+    --------
+    An example of how to use the function
+
+    >>> a = [1, 2, 3]
+    >>> print [x + 3 for x in a]
+    [4, 5, 6]
+    >>> print "a\n\nb"
+    a
+    b
+
+    """ 
+
+    r1 = state[0:3]
+    v1 = state[3:6]
+    r2 = state[6:9]
+    v2 = state[9:12]
+
+    r = r2 - r1
+    r1_dot = v1
+    v1_dot = gravity_force(m1, m2, -r, G) / m1
+    r2_dot = v2
+    v2_dot = gravity_force(m1, m2, r, G) / m2
+    
+    statedot = np.concatenate(( r1_dot, v1_dot, r2_dot, v2_dot ))
+
+    return statedot
