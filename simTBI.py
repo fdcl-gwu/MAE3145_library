@@ -1,3 +1,9 @@
+"""Simualtion of two body inertial motion
+
+This solves Problem 4 from Homework 1 from MAE3145
+
+"""
+
 import numpy as np
 import scipy.integrate
 import matplotlib.pyplot as plt
