@@ -33,10 +33,8 @@ class TesteomTBI():
         This is exaclty copied from the homework assignment and lets me verify 
         my function automatically.
         """
-        expected_statedot = np.concatenate((self.v10,
-                                            self.G * self.m2 /
-                                            np.linalg.norm(
-                                                self.r0)**3 * self.r0,
-                                            self.v20,
-                                            - self.G * self.m1 / np.linalg.norm(self.r0)**3 * self.r0))
+        expected_statedot = np.concatenate((np.array([0, 0, 0]),
+                                            np.array([1, 0, 0]),
+                                            np.array([1, 1, 0]), 
+                                            np.array([-2, 0, 0])))
         np.testing.assert_allclose(self.statedot, expected_statedot)
