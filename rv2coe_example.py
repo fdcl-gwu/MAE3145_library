@@ -10,6 +10,11 @@ re = constants.earth.radius
 mu = constants.earth.mu
 
 def rv2coe(r, v):
+    """THIS FUNCTION STILL NEEDS TO CHECK THE QUADRANTS FOR ALL ANGLES
+
+    """
+
+    print("YOU NEED TO MANUALLY VERIFY THE ANGLES!!!")
 
     h = np.cross(r, v)
     h_hat = h / np.linalg.norm(h)
