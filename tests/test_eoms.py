@@ -1,4 +1,4 @@
-from .. import eoms, constants
+from astro import eoms, constants
 import numpy as np
 
 
