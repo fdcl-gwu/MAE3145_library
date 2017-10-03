@@ -60,10 +60,10 @@ def add_two_inputs(a, b):
     --------
     An example of how to use the function
 
-    >>> a = [1, 2, 3]
-    >>> b = [2, 3, 4]
+    >>> a = np.array([1, 2, 3])
+    >>> b = np.array([2, 3, 4])
     >>> out = add_two_inputs(a, b)
-    out = [3, 5, 7]
+    out = array([3, 5, 7])
 
     """
     out = a + b
