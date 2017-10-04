@@ -15,7 +15,7 @@ As a result this script shouldn't be that long or complicated, as all the specif
 import numpy as np
 import matplotlib.pyplot as plt
 
-from astro import example_module
+from example_package import example_module
 
 print("Let's add two numbers")
 
