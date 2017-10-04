@@ -1,3 +1,5 @@
+"""Test out our kepler module
+"""
 
 import numpy as np
 from astro import kepler
