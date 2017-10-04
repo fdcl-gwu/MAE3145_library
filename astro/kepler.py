@@ -77,9 +77,55 @@ def specific_mechanical_energy(r, v, mu=constants.earth.mu):
     return energy
 
 def apoapsis_periapsis(a, ecc):
-    """Compute radius of apoapsis and periapsis
+    r"""Compute radius of apoapsis and periapsis for an elliptical orbit
 
-    """
+    This computes apoapsis and periapsis. If you try this with an orbit with a large
+    eccentricity, the apopasis number will not make any sense.
+
+    Parameters
+    ----------
+    a : float
+        semi-major axis in km
+    ecc : float
+        eccentricity unitless
+
+    Returns
+    -------
+    ra : float
+        Radius of apoapsis in km
+    rp : float
+        Raidus of periapsis in km
+
+    Other Parameters
+    ----------------
+    None
+
+    Raises
+    ------
+    None
+
+    See Also
+    --------
+    None
+
+    Author
+    ------
+    Shankar Kulumani		GWU		skulumani@gwu.edu
+
+    References
+    ----------
+
+    .. [1] Bate, Mueller, White Fundamentals of Astrodynamics 
+
+    Examples
+    --------
+    An example of how to use the function
+
+    >>> a = 6378
+    >>> ecc = 0
+    >>> apoapsis_periapsis(a, ecc)
+    (6378, 6378)
+    """ 
     rp = a * ( 1 -  ecc)
     ra = a * ( 1 + ecc)
 
