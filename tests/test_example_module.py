@@ -14,7 +14,7 @@ Shankar Kulumani		GWU		skulumani@gwu.edu
 import numpy as np  # numpy will allow us to do the actual testing
 
 # we import the module or functions we want to test
-from astro import example_module
+from example_package import example_module
 
 
 def test_add_two_inputs_scalar():
