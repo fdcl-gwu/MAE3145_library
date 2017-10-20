@@ -32,6 +32,8 @@ import matplotlib.pyplot as plt
 
 def add_two_inputs(a, b):
     r"""A one line description of the function
+    
+    c = add_two_inputs(a, b)
 
     This function will take two inputs and find the sum. 
     The inputs can be either scalars or numpy arrays of the same size.
