@@ -419,3 +419,44 @@ def test_nu2anom_pi():
 
     np.testing.assert_allclose(E_python, E_true)
     np.testing.assert_allclose(M_python, M_true)
+
+
+def test_kepler_eq_E():
+    """
+        A series of cases run in Matlab and copied here
+    """
+    M = np.deg2rad(110)
+    ecc = 0.9
+    E_matlab = 2.475786297687611 
+    nu_matlab = 2.983273149717047
+
+    E_python, nu_python, count_python = kepler.kepler_eq_E(M,ecc)
+
+    np.testing.assert_allclose((E_python, nu_python),(E_matlab,nu_matlab))
+
+def test_kepler_eq_E_zero():
+    """
+        Make sure that at zero nu=E=M
+    """
+    M = 0.0
+    ecc = 1.2
+    E_true = 0.0
+    nu_true = 0.0
+    
+    E_python, nu_python, count_python = kepler.kepler_eq_E(M,ecc)
+
+    np.testing.assert_array_almost_equal((E_python,nu_python),(E_true,nu_true))
+
+
+def test_kepler_eq_E_pi():
+    """
+        Make sure that at pi nu=E=M
+    """
+    M = np.pi
+    ecc = 0.9
+    E_true = np.pi
+    nu_true = np.pi
+
+    E_python, nu_python, count_python = kepler.kepler_eq_E(M,ecc)
+
+    np.testing.assert_array_almost_equal((E_python,nu_python),(E_true,nu_true))
