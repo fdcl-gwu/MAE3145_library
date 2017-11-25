@@ -1,4 +1,9 @@
 
+from __future__ import absolute_import, division, print_function, unicode_literals
+
+import numpy as np
+from collections import namedtuple
+
 # tuple to hold all the items from a single TLE
 TLE = namedtuple('TLE', [
     'satname', 'satnum', 'classification', 'id_year', 'id_launch',
@@ -262,3 +267,39 @@ def stringScientificNotationToFloat(sn):
     """ 
 
     return 1e-5 * float(sn[:6]) * 10**int(sn[6:])
+
+def get_tle(filename):
+    """Assuming a file with 3 Line TLEs is given this will parse the file
+    and save all the elements to a list or something.
+    """
+    tles = 0
+    lines = 0
+    all_tles = []
+    with open(filename, 'r') as f:
+        l0 = f.readline().strip()
+        while l0:
+            l1 = f.readline().strip()
+            lines += 1
+            l2 = f.readline().strip()
+            lines += 1
+            # error check to make sure we have read a complete TLE
+            if validtle(l0, l1, l2):
+                # now we parse the tle
+                elements = parsetle(l0, l1, l2)
+                tles += 1
+                # final check to see if we got a good TLE
+                if elements.good:
+                    # instantiate a bunch of instances of a Satellite class
+                    all_tles.append(elements)
+
+            else:
+                print("Invalid TLE")
+
+            l0 = f.readline().strip()
+            lines += 1
+
+    print("Read {} lines which should be {} TLEs".format(lines, lines / 3))
+    print("Found {} TLEs".format(len(all_tles)))
+    return all_tles
+
+
