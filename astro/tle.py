@@ -269,9 +269,28 @@ def stringScientificNotationToFloat(sn):
     return 1e-5 * float(sn[:6]) * 10**int(sn[6:])
 
 def get_tle(filename):
-    """Assuming a file with 3 Line TLEs is given this will parse the file
-    and save all the elements to a list or something.
-    """
+    r"""Read TLEs from a file and save to a list
+
+    all_tles = get_tle(filename)
+
+    Parameters
+    ----------
+    filename : string
+        <`4:Description of the variable`>
+
+    Returns
+    -------
+    all_tles : list
+        List of TLE elements from all satellites contained inside filename
+
+    See Also
+    --------
+    parsetle : this actually reads and process the three lines of the TLE
+
+    Author
+    ------
+    Shankar Kulumani		GWU		skulumani@gwu.edu
+    """ 
     tles = 0
     lines = 0
     all_tles = []
