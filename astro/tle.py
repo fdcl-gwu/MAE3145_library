@@ -276,12 +276,14 @@ def get_tle(filename):
     Parameters
     ----------
     filename : string
-        <`4:Description of the variable`>
+        Path to a text file to read. The file should only contain 
+        the three-lines for each TLE. No extra white space 
 
     Returns
     -------
     all_tles : list
         List of TLE elements from all satellites contained inside filename
+        Each element of the list is a TLE named tuple. The tuple is defined above.
 
     See Also
     --------
