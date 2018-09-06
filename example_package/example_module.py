@@ -30,6 +30,11 @@ import matplotlib.pyplot as plt
 
 # your personal modules should come after those included with Python
 
+def subtract_two_inputs(a, b):
+    """This is a subtract function"""
+    c = a - b
+    return c
+    
 def add_two_inputs(a, b):
     r"""A one line description of the function
     

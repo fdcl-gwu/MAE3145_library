@@ -23,5 +23,10 @@ a = input("What is the first number? ")
 b = input("What is the second number? ")
 
 c = example_module.add_two_inputs(float(a), float(b))
+d = example_module.subtract_two_inputs(float(a), float(b))
 
 print("The sum is %4.2f" % c)
+print("The difference is {}".format(d))
+
+"""More comments"""
+
