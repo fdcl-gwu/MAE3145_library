@@ -1,5 +1,5 @@
 import numpy as np
-import scipy as sp
+from scipy import integrate
 from astro import time
 import matplotlib.pyplot as plt
 
@@ -20,7 +20,7 @@ def pendulum_eoms(y, t):
 initial_state = np.array([np.pi - 0.1, 0])
 t = np.linspace(0, 10, 100)
 
-sol = sp.integrate.odeint(pendulum_eoms, initial_state, t)
+sol = integrate.odeint(pendulum_eoms, initial_state, t)
 
 theta = sol[:, 0]
 theta_dot = sol[:, 1]
