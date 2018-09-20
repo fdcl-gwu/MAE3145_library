@@ -536,3 +536,41 @@ def kepler_eq_E(M_in, ecc_in):
 
     return (np.squeeze(E_out), np.squeeze(nu_out), np.squeeze(count_out))
 
+def lvlh2pqw(r_lvlh, theta):
+    r"""Convert a vector from LVLH to PQW reference frames
+
+    This function will transform a vector represented in the local vertical/
+    local horizontal reference frame to the perifocal reference frame.
+    This transformation is equivalent to a rotation by the true anomaly about
+    the angular moment vector.
+
+    Parameters
+    ----------
+    r_lvlh : ndarray (3,)
+        Vector defined in the LVLH frame (r_hat, thetahat, h_hat)
+    theta : float 
+        True anomaly defined in radians. Angle between the reference direction
+        usually periapsis and the position vector in the plane of the orbit 
+        and in the direction of motion
+
+    Returns
+    -------
+    r_pqw : ndarray (3,)
+        Vector represented in the perifocal frame (p_hat, q_hat, h_hat)
+        same units as the input
+
+    Author
+    ------
+    Shankar Kulumani		GWU		skulumani@gwu.edu
+
+    References
+    ----------
+    Look at any astrodynamics book
+
+    """
+    R_lvlh2pqw = np.array([[ np.cos(theta), -np.sin(theta), 0],
+                           [ np.sin(theta), np.cos(theta), 0],
+                           [0             ,             0, 1]])
+    r_pqw = R_lvlh2pqw.dot(r_lvlh)
+
+    return r_pqw
