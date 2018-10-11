@@ -34,6 +34,7 @@ def pqw2eci(raan, argp, inc):
     Shankar Kulumani		GWU		skulumani@gwu.edu
     """
     PQW2ECI = attitude.rot3(raan).dot(attitude.rot1(inc)).dot(attitude.rot3(argp))
+    print(PQW2ECI)
     return PQW2ECI
 
 def eci2pqw():

@@ -574,3 +574,44 @@ def lvlh2pqw(r_lvlh, theta):
     r_pqw = R_lvlh2pqw.dot(r_lvlh)
 
     return r_pqw
+
+def rv2coe(r, v):
+    """THIS FUNCTION STILL NEEDS TO CHECK THE QUADRANTS FOR ALL ANGLES
+
+    """
+
+    print("YOU NEED TO MANUALLY VERIFY THE ANGLES!!!")
+    re = constants.earth.radius
+    mu = constants.earth.mu
+
+    h = np.cross(r, v)
+    h_hat = h / np.linalg.norm(h)
+    print('h_hat: {}'.format(h_hat))
+
+    n = np.cross(np.array([0, 0, 1]), h_hat)
+    n_hat = n / np.linalg.norm(n)
+    print('n_hat: {}'.format(n_hat))
+
+    e = 1 / mu * (( np.linalg.norm(v)**2 - mu / np.linalg.norm(r)) * r - r.dot(v) * v)
+    e_hat = e / np.linalg.norm(e)
+    print('e_hat: {}'.format(e_hat))
+
+    p = np.linalg.norm(h)**2 / mu
+    ecc = np.linalg.norm(e)
+    a = p / (1-ecc**2)
+    print('p: {} km, a: {} km, ecc: {}'.format(p, a, ecc))
+    print('p: {} Re, a: {} Re'.format(p / re, a / re))
+
+    inc = np.arccos(np.dot(np.array([0, 0, 1]), h_hat)) * 180 / np.pi
+    print('i: {} deg'.format(inc))
+
+    raan = np.arccos(np.dot(np.array([1, 0, 0]), n_hat)) * 180 / np.pi
+    print('raan: {} deg'.format(raan))
+
+    argp = np.arccos(np.dot(n_hat, e_hat)) * 180 / np.pi
+    print('argp: {} deg'.format(argp))
+
+    nu = np.arccos(np.dot(e_hat, r / np.linalg.norm(r))) * 180 / np.pi
+    print('nu: {} deg'.format(nu))
+    
+    return a, ecc, inc, raan, argp, nu
